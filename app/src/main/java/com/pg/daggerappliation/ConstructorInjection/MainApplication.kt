@@ -3,12 +3,12 @@ package com.pg.daggerappliation.ConstructorInjection
 import android.app.Application
 
 class MainApplication : Application() {
-    private lateinit var componnent: CoffeComponnent
+    private lateinit var componnent: AppComponent
     override fun onCreate() {
         super.onCreate()
-        componnent = DaggerCoffeComponnent.builder().sugarquantity(4).milkQuantitty(5).build1()
+        componnent = DaggerAppComponent.create()
     }
-        fun getcomponnent(): CoffeComponnent {
+        fun getcomponnent(): AppComponent {
             return componnent
         }
 
